@@ -65,6 +65,13 @@ window.onload = () => {
     menu.style.display = 'block';
   });
 
+  function close(menu, toBeClose) {
+    menu.addEventListener('click', () => {
+      const value = document.querySelector(toBeClose);
+      value.style.display = 'none';
+    });
+  }
+
   close(closeBtn, '.mobile-menu');
   closeBtn.addEventListener('click', () => {
     const menu = document.querySelector('.mobile-menu');
@@ -79,10 +86,5 @@ window.onload = () => {
     menu.style.display = 'none';
   });
 
-  function close(menu, toBeClose) {
-    menu.addEventListener('click', () => {
-      const value = document.querySelector(toBeClose);
-      value.style.display = 'none';
-    });
-  }
+
 };
