@@ -1,128 +1,92 @@
-const speakers = [
-  {
-    id: 1,
-    image: './Assets/images/ryan.png',
-    name: 'Augusta Ada King',
-    organization: 'Counter of Lovelace and Mathematician',
-    background:
-      'Augusta has completed his Bachelor\'s degree in Civil Engineering in University of the Philippines',
-  },
-  {
-    id: 2,
-    image:
-    './Assets/images/julia.png',
-    name: 'Rear Admiral Grace Hopper',
-    organization: 'Internet Pioneer',
-    background:
-      'Admiral. He has started his coding journey end of January 2022 and was accepted as a full-time Microverse student mid of March of that year.',
-  },
-  {
-    id: 3,
-    image:
-    './Assets/images/kilnam.png',
-    name: 'Rebecca Cole',
-    organization: 'NASA Space Scientist',
-    background:
-      'As the main venue for new media art production in Korea Nabi promotes cross-disciplinary collaboration and understanding among science technology humanities and the arts.',
-  },
-  {
-    id: 4,
-    image: './Assets/images/lila.png',
-    name: 'Radia Perlman',
-    organization: 'MD',
-    background:
-    'Ryan had been leading open-source projects at the Mozilla Foundation such as the open source movement.',
-  },
-  {
-    id: 5,
-    image:
-    './Assets/images/yokai.png',
-    name: 'Katherine Johnson',
-    organization: 'Inventor and Computer Scientist',
-    background:
-      'Katherine Johnson is the Executive Director of the Wikimedia Foundation, the nonprofit organization that operates Wikipedia.',
-  },
-  {
-    id: 6,
-    image:
-    './Assets/images/sohyeong.png',
-    name: 'Florence Nightngale',
-    organization: 'Social Reformer and Mathematician',
-    background:
-      'Florence Nightngale is the Executive Director of the Wikimedia Foundation, the nonprofit organization that operates Wikipedia. Wikipedia is freely available in 290 languages and used by nearly half a billion people around the world every month.',
-  },
-];
 
-const featuredSpeakers = document.querySelector('.speakers-list');
-const speakersButton = document.querySelector('.speakers-btn');
+window.onload = () => {
 
-function loadSpeakers() {
-  speakers.forEach((speaker, index) => {
-    const speakerContainer = document.createElement('article');
-    speakerContainer.className = index > 1 ? 'flex-row-center speakers-display' : 'flex-row-center';
-    featuredSpeakers.appendChild(speakerContainer);
-
-    const speakerImage = document.createElement('img');
-    speakerImage.src = `${speaker.image}`;
-    speakerImage.alt = `Image of ${speaker.name}`;
-    speakerImage.className = 'speaker-image';
-    speakerContainer.appendChild(speakerImage);
-
-    const speakerInfos = document.createElement('div');
-    speakerInfos.className = 'speaker-infos';
-    speakerContainer.appendChild(speakerInfos);
-
-    const speakerName = document.createElement('h3');
-    speakerName.className = 'light-black heading-medium speaker-heading';
-    speakerName.textContent = `${speaker.name}`;
-    speakerInfos.appendChild(speakerName);
-
-    const speakerOrganization = document.createElement('h4');
-    speakerOrganization.className = 'dark-orange';
-    speakerOrganization.textContent = `${speaker.organization}`;
-    speakerInfos.appendChild(speakerOrganization);
-
-    const speakerBackground = document.createElement('h4');
-    speakerBackground.className = 'light-black';
-    speakerBackground.textContent = `${speaker.background}`;
-    speakerInfos.appendChild(speakerBackground);
+  const guestSpeakers = [
+      {
+          image: '../assets/images/emma-gbenga.png',
+          name: 'Emma Gbenga',
+          role: 'Founder Open Source Africa',
+          bio: 'Formal UI designer at Google'
+      },
+      {
+          image: '../assets/images/charles-shady.png',
+          name: 'Charles Shady',
+          role: 'Full-stack developer',
+          bio: 'Amazon Product Designer'
+      },
+      {
+          image: '../assets/images/ajise-bonke.png',
+          name: 'Ajise Bonke',
+          role: 'UI/UX',
+          bio: 'Product Manager at Octax'
+      },
+      {
+          image: '../assets/images/kalolo-hauf.png',
+          name: 'Kalolo Hauf',
+          role: 'Managing Director',
+          bio: 'Gricd Integrated Services'
+      },
+      {
+          image: '../assets/images/mithi-debas.png',
+          name: 'Mithi Debas',
+          role: 'CEO',
+          bio: 'Drelugs Limited - kelugs integrated venture'
+      },
+      {
+          image: '../assets/images/sam-omar.png',
+          name: 'Sam Omar',
+          role: 'CTO',
+          bio: 'VFD Micro-finance Bank'
+      },
+  ];
+  
+  function displaySpeakerInfo(speakerInfo) {
+      const speakers = 
+      `<div class="speaker-1">
+      <div class="speaker-image">
+          <img src=${speakerInfo.image} alt="speaker-1">
+      </div>
+      <div>
+          <h2>${speakerInfo.name}</h2>
+          <h3>${speakerInfo.role}</h3>
+          <h4>${speakerInfo.bio}</h4>
+      </div>
+  </div>`;
+  return speakers;
+  }
+  const guestSpeakerAtEvent = document.querySelector('.image-display-1');
+  guestSpeakers.forEach((card) => {
+      guestSpeakerAtEvent.innerHTML += displaySpeakerInfo(card);
   });
-}
-
-function toggleSpeakers() {
-  const displayedItems = document.querySelectorAll('.speakers-display');
-  const toggledItems = document.querySelectorAll('.toggle');
-
-  if (toggledItems.length === 0) {
-    displayedItems.forEach((item) => {
-      item.className = 'flex-row-center toggle';
+  
+  const hamburger = document.querySelector('.menu');
+  const closeBtn = document.querySelector('.closeBtn');
+  
+  hamburger.addEventListener('click', () => {
+      console.log("clicked")
+      const menu = document.querySelector('.mobile-menu');
+      menu.style.display = 'block';
     });
-    speakersButton.textContent = 'LESS';
-    const arrow = document.createElement('i');
-    arrow.className = 'fas fa-angle-up down-arrow';
-    speakersButton.appendChild(arrow);
-  }
-  if (toggledItems.length) {
-    toggledItems.forEach((item) => {
-      item.className = 'flex-row-center speakers-display';
-      speakersButton.textContent = 'MORE';
-      const arrow = document.createElement('i');
-      arrow.className = 'fas fa-angle-down down-arrow';
-      speakersButton.appendChild(arrow);
+  
+    close(closeBtn,'.mobile-menu');
+    closeBtn.addEventListener('click', () => {
+      const menu = document.querySelector('.mobile-menu');
+      menu.style.display = 'none';
+      close(menu);
     });
-  }
-}
-
-featuredSpeakers.addEventListener('DOMContentLoaded', loadSpeakers());
-speakersButton.addEventListener('onclick', toggleSpeakers);
-
-function openNav() {
-  document.getElementById('myNav').style.width = '100%';
-}
-
-function closeNav() {
-  document.getElementById('myNav').style.width = '0%';
-}
-
-openNav();
-closeNav();
+  
+    const backToMainPage = document.querySelector('.menuPopUp');
+    close(backToMainPage,'.mobile-menu');
+    backToMainPage.addEventListener('click', () => {
+      const menu = document.querySelector('.mobile-menu');
+      menu.style.display = 'none';
+    });
+  
+     function close(menu, toBeClose){
+       menu.addEventListener('click' , () =>{
+          const value = document.querySelector(toBeClose);
+          value.style.display = 'none';
+       });
+    };
+  };
+  
