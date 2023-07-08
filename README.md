@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <h3><b>CAPSTONE project site</b></h3> 
+  <h3><b>JSociety conference project site</b></h3> 
 
 </div>
 
@@ -36,7 +36,7 @@
 
 > This a Microverse Project, for a fully responsive capstone project site.
 
-**Microverse Portfolio** is a fully responsive web application.
+**JSociety conference global Summit** is a fully responsive web application.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -60,7 +60,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://peter-mwovi.github.io/portfolio_setup/)
+- [Live Demo Link](https://peter-mwovi.github.io/Capstone-project/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -195,7 +195,7 @@ I would like to thank Microverse for providing me with the necessary tools to wo
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./MIT.md) licensed.
+This project is [MIT](./LICENSE) licensed.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
