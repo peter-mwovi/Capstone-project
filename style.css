@@ -453,7 +453,7 @@ a {
   }
 
   .dark-nav ul {
-    margin-right: 13.5%;
+    margin-right: 10%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -483,6 +483,7 @@ a {
     background-size: cover;
     height: 100vh;
     padding: 7% 10% 0 15%;
+    margin-bottom: 3%;
   }
 
   .quote {
