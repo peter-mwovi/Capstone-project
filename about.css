@@ -43,8 +43,8 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-right: 10%;
-  padding: 5px 0 5px 0;
+  margin-right: 0;
+  padding: 0 5%;
 }
 
 .nav-menu {
@@ -411,12 +411,12 @@ hr {
   }
 
   .dark-nav ul {
-    margin-right: 10%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     gap: 20px;
-    padding: 5px 0 5px 0;
+    margin-right: 0;
+    padding: 0 5%;
   }
 
   .second-para a {
