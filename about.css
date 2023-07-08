@@ -320,7 +320,7 @@ hr {
 
 @media screen and (max-width: 768px) {
   .background {
-    background-image: url(./images/bg1.jpg);
+    background-image: url(./images/bg1.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -444,7 +444,7 @@ hr {
   }
 
   .hero {
-    background-image: url(./images/bg1.jpg);
+    background-image: url(./images/bg1.png);
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
